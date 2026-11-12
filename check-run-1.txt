@@ -1,0 +1,131 @@
+Тестовый проект: ipr-check-1794417832-362-5577
+ Image ipr-check-1794417832-362-5577-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 563B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 247B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim
+#3 DONE 2.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 83B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 94B done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90 0.0s done
+#6 DONE 0.0s
+
+#7 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#7 CACHED
+
+#8 [2/5] WORKDIR /app
+#8 CACHED
+
+#9 [3/5] COPY app/requirements.txt ./requirements.txt
+#9 CACHED
+
+#10 [5/5] COPY app/app.py ./app.py
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 exporting manifest sha256:8d1dc411ad8d574fbf9d378d31dd7c2ade20224f54dbb43e5d0baebfe8c8b3be 0.0s done
+#11 exporting config sha256:d8bf4518cbcfbb06f658b6437f88be5ec1b32d0f7c11a00cd3725fb9ee9c3e72 0.0s done
+#11 exporting attestation manifest sha256:ec4644c3da86cd1c6e67818d73f08943277f7e7c158694861314d968f54a061a 0.0s done
+#11 exporting manifest list sha256:7ca8ce3f3a65b22e5eb4037530c3d0c589fc3b4c71f91014da6a1b325f74b095 0.0s done
+#11 naming to docker.io/library/ipr-check-1794417832-362-5577-app:latest
+#11 naming to docker.io/library/ipr-check-1794417832-362-5577-app:latest done
+#11 unpacking to docker.io/library/ipr-check-1794417832-362-5577-app:latest done
+#11 DONE 0.1s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image ipr-check-1794417832-362-5577-app Built 
+ Network ipr-check-1794417832-362-5577_default Creating 
+ Volume ipr-check-1794417832-362-5577_redis_data Creating 
+ Network ipr-check-1794417832-362-5577_default Creating 
+ Volume ipr-check-1794417832-362-5577_redis_data Creating 
+ Volume ipr-check-1794417832-362-5577_redis_data Created 
+ Volume ipr-check-1794417832-362-5577_redis_data Created 
+ Network ipr-check-1794417832-362-5577_default Created 
+ Network ipr-check-1794417832-362-5577_default Created 
+ Container ipr-check-1794417832-362-5577-redis-1 Creating 
+ Container ipr-check-1794417832-362-5577-redis-1 Created 
+ Container ipr-check-1794417832-362-5577-app-1 Creating 
+ Container ipr-check-1794417832-362-5577-app-1 Created 
+ Container ipr-check-1794417832-362-5577-redis-1 Starting 
+ Container ipr-check-1794417832-362-5577-redis-1 Started 
+ Container ipr-check-1794417832-362-5577-redis-1 Waiting 
+ Container ipr-check-1794417832-362-5577-redis-1 Healthy 
+ Container ipr-check-1794417832-362-5577-app-1 Starting 
+ Container ipr-check-1794417832-362-5577-app-1 Started 
+ Container ipr-check-1794417832-362-5577-app-1 Waiting 
+ Container ipr-check-1794417832-362-5577-redis-1 Waiting 
+ Container ipr-check-1794417832-362-5577-redis-1 Healthy 
+ Container ipr-check-1794417832-362-5577-app-1 Healthy 
+{"greeting": "Hello-from-my-Compose", "count": 0, "hostname": "78c9ce18e392", "storage": "redis"}
+expected=0, actual=0
+{"greeting": "Hello-from-my-Compose", "count": 1, "hostname": "78c9ce18e392", "storage": "redis"}
+expected=1, actual=1
+{"greeting": "Hello-from-my-Compose", "count": 2, "hostname": "78c9ce18e392", "storage": "redis"}
+expected=2, actual=2
+{"greeting": "Hello-from-my-Compose", "count": 3, "hostname": "78c9ce18e392", "storage": "redis"}
+expected=3, actual=3
+ Container ipr-check-1794417832-362-5577-app-1 Recreate 
+ Container ipr-check-1794417832-362-5577-app-1 Recreated 
+ Container ipr-check-1794417832-362-5577-app-1 Starting 
+ Container ipr-check-1794417832-362-5577-app-1 Started 
+ Container ipr-check-1794417832-362-5577-app-1 Waiting 
+ Container ipr-check-1794417832-362-5577-app-1 Healthy 
+{"greeting": "Hello-from-my-Compose", "count": 3, "hostname": "e5a4eb05e791", "storage": "redis"}
+expected=3, actual=3
+ Container ipr-check-1794417832-362-5577-redis-1 Stopping 
+ Container ipr-check-1794417832-362-5577-redis-1 Stopped 
+GET /healthz: expected=200, actual=200
+GET /readyz: expected=503, actual=503
+POST /increment: expected=503, actual=503
+ Container ipr-check-1794417832-362-5577-redis-1 Starting 
+ Container ipr-check-1794417832-362-5577-redis-1 Started 
+GET /readyz: expected=200, actual=200
+{"greeting": "Hello-from-my-Compose", "count": 3, "hostname": "e5a4eb05e791", "storage": "redis"}
+expected=3, actual=3
+{"greeting": "Hello-from-my-Compose", "count": 4, "hostname": "e5a4eb05e791", "storage": "redis"}
+expected=4, actual=4
+ Container ipr-check-1794417832-362-5577-app-1 Stopping 
+ Container ipr-check-1794417832-362-5577-app-1 Stopped 
+ Container ipr-check-1794417832-362-5577-redis-1 Stopping 
+ Container ipr-check-1794417832-362-5577-redis-1 Stopped 
+ Container ipr-check-1794417832-362-5577-redis-run-9848d4d42e66 Creating 
+ Container ipr-check-1794417832-362-5577-redis-run-9848d4d42e66 Created 
+ Container ipr-check-1794417832-362-5577-redis-run-14a24cd11a52 Creating 
+ Container ipr-check-1794417832-362-5577-redis-run-14a24cd11a52 Created 
+drwxr-xr-x redis/redis         0 2026-11-11 17:24:36 ./
+drwx------ redis/redis         0 2026-11-11 17:23:55 ./appendonlydir/
+-rw------- redis/redis        88 2026-11-11 17:23:55 ./appendonlydir/appendonly.aof.manifest
+-rw------- redis/redis       234 2026-11-11 17:24:32 ./appendonlydir/appendonly.aof.1.incr.aof
+-rw------- redis/redis        89 2026-11-11 17:23:55 ./appendonlydir/appendonly.aof.1.base.rdb
+-rw------- redis/redis       115 2026-11-11 17:24:36 ./dump.rdb
+
+Проверки выполнены. Резервная копия: backups/ipr-check-1794417832-362-5577.tar
+ Container ipr-check-1794417832-362-5577-redis-1 Stopping 
+ Container ipr-check-1794417832-362-5577-app-1 Stopping 
+ Container ipr-check-1794417832-362-5577-redis-1 Stopped 
+ Container ipr-check-1794417832-362-5577-redis-1 Removing 
+ Container ipr-check-1794417832-362-5577-app-1 Stopped 
+ Container ipr-check-1794417832-362-5577-app-1 Removing 
+ Container ipr-check-1794417832-362-5577-app-1 Removed 
+ Container ipr-check-1794417832-362-5577-redis-1 Removed 
+ Volume ipr-check-1794417832-362-5577_redis_data Removing 
+ Network ipr-check-1794417832-362-5577_default Removing 
+ Volume ipr-check-1794417832-362-5577_redis_data Removed 
+ Image ipr-check-1794417832-362-5577-app:latest Removing 
+ Image ipr-check-1794417832-362-5577-app:latest Removed 
+ Network ipr-check-1794417832-362-5577_default Removed 
